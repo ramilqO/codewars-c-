@@ -1,23 +1,19 @@
-#include <vector>
 #include <iostream>
+#include <string>
 
-std::vector<int> pipe_fix(const std::vector<int> &nums) {
-    std::vector<int> result;
+std::string fakeBin(std::string str) {
+    std::string result;
 
-   for (int i = nums[0]; i <= nums[nums.size() - 1]; i++) {result.push_back(i);}
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] < '5') { result.push_back('0'); }
+        if (str[i] > '5') { result.push_back('1'); }
+    }
 
     return result;
 }
 
 int main() {
-    std::vector<int> fixed = pipe_fix({1, 3, 5, 8, 22});
-
-    std::cout << "[ ";
-    for (int x : fixed) {
-        std::cout << x << " ";
-    }
-    std::cout << "]" << std::endl;
-
+        std::cout << fakeBin("117128717287823049") << std::endl;
 
     return 0;
 }
